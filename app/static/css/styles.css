@@ -1,0 +1,54 @@
+body {
+    background-color: #f2f2f2;
+    color: #000000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+
+header {
+    background-color: #F8F8F8;
+    color: #990000;
+    padding: 16px;
+    font-weight: bold;
+}
+
+/* Main Area */
+
+main {
+    flex: 1;
+    padding: 16px;
+    padding-bottom: 70px; /* space for bottom nav */
+}
+
+/* Text Headings */
+
+h2, h3, h4, h5 {
+    color: #990000;
+}
+
+/* Cards Containing Text */
+
+.container {
+    background-color: #E0E0E0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+/* Footer */
+
+.bottom-nav {
+    background-color: #F8F8F8;
+    border-top: 1px solid #d0d0d0;
+    text-align: center;
+    padding: 12px 0;
+    color: #990000;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

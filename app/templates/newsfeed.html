@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <!-- Welcome Message -->
+    <div class="container my-4">
+        <h2>Good Afternoon!</h2>
+    </div>
+
+    <!-- Anything to share? -->
+    <div class="container mb-4">
+        <div class="bg-light p-3 rounded shadow-sm">
+            <div class="d-flex align-items-center">
+                <div class="flex-grow-1">
+                    <p class="mb-1 text-muted">Anything to share?</p>
+                    <!-- NOT A REAL FORM YET - JUST BASIC TO GET STARTED -->
+                    <a href="#" class="btn btn-sm btn-outline-secondary">
+                        Create Post
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stories Scrolling Row - WONT SCROLL YET -->
+    <div class="container mb-4">
+        <h5 class="mb-3">Your Connections</h5>
+
+        {% if stories and stories|length > 0 %}
+            <div class="d-flex flex-wrap gap-2">
+                {% for person in stories %}
+                    <div class="bg-light p-2 rounded shadow-sm">
+                        <small><strong>{{ person.name }}</strong></small><br>
+                        <small class="text-muted">{{ person.course }}</small>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-muted">No friends to show yet.</p>
+        {% endif %}
+    </div>
+
+    <!-- NewsFeed -->
+    <div class="container mb-5">
+        <h5 class="mb-3">News Feed</h5>
+
+        {% if posts and posts|length > 0 %}
+            {% for post in posts %}
+                <div class="bg-light p-4 rounded shadow-sm mb-4">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <strong>{{ post.author_name }}</strong><br>
+                            <small class="text-muted">{{ post.time_ago }}</small>
+                        </div>
+                        <div>
+                            <small class="text-muted">...</small>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    {% if post.title %}
+                        <h6 class="mb-2">{{ post.title }}</h6>
+                    {% endif %}
+
+                    <p class="mb-3">{{ post.content }}</p>
+
+                    <!-- Like, Comment & Share engagement row - WILL TURN INTO REAL BUTTONS LATER -->
+                    <div class="d-flex gap-3 text-muted">
+                        <small>👍 {{ post.likes }}</small>
+                        <small>💬 {{ post.comments }}</small>
+                        <small>↗ {{ post.shares }}</small>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-muted">
+                No posts yet. Add friends or join groups, clubs, societies, events and modules to see updates.
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

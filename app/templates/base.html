@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UConnect</title>
+
+    <!-- styles.css -->
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>UConnect</header>
+
+    <!-- Main -->
+    <main>
+        {% block app_content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <nav class="bottom-nav">
+        Home · Search · Messages · Notifications · Profile
+    </nav>
+
+</body>
+</html>
+
