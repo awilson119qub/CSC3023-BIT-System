@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Flask stuff:
+instance/
+.webassets-cache
+.flaskenv
+
+# Environments
+.env
+.venv
+env/
+venv/
+.env/
+.venv/
+virtualenv/
+ENV/
+env.bak/
+venv.bak/
+
+.DS_store
