@@ -19,5 +19,5 @@ virtualenv/
 ENV/
 env.bak/
 venv.bak/
-
+.vscode/
 .DS_store
