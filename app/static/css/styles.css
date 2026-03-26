@@ -35,15 +35,29 @@ h2, h3, h4, h5 {
 
 /* Cards Containing Text */
 
-/* Footer */
+/* Bottom Navbar */
 
-.bottom-nav {
-    background-color: #F8F8F8;
-    border-top: 1px solid #d0d0d0;
-    text-align: center;
-    padding: 12px 0;
+.navbar {
+    height: 60px;
+}
+
+/* Font Awesome Icons */
+.navbar .nav-link {
+    color: #6c757d;
+    font-size: 22px;
+    transition: color 0.2s ease;
+}
+
+/* Hover Highlight */
+.navbar .nav-link:hover {
     color: #990000;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+}
+
+/* Active Page Highlight */
+.navbar .nav-link.active {
+    color: #990000;
+}
+ /* Filter Button */
+.primary-accent {
+    color: #990000;
 }

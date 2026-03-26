@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <div class="container my-4">
+        <div class="row align-items-center mb-4">
+            <!-- Profile Picture -->
+            <div class="col-auto">
+                <img src="{{ user.avatar(100) }}" alt="{{ user.username }}'s avatar" class="img-fluid rounded">
+            </div>
+
+            <!-- User Information -->
+            <div class="col">
+                <h1 class="mb-0">User: {{ user.username }}</h1>
+                {% if user.about_me %}
+                    <p class="mt-2">{{ user.about_me }}</p>
+                {% endif %}
+                <p>Last seen on: {{ user.last_seen.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+
+                <!-- Edit Profile Button -->
+                {% if user == current_user %}
+                    <a href="{{ url_for('user', username=user.username, edit='true') }}" class="btn btn-warning mt-3">Edit Profile</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Edit Profile Form -->
+        {% if request.args.get('edit') and user == current_user %}
+            <h2>Edit Profile</h2>
+            <form method="POST" class="row g-3">
+                {{ form.hidden_tag() }}
+                
+                <!-- Username -->
+                <div class="col-md-6">
+                    {{ form.username.label(class="form-label") }}
+                    {{ form.username(class="form-control") }}
+                    {% for error in form.username.errors %}
+                        <small class="text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+                <!-- About Me -->
+                <div class="col-md-6">
+                    {{ form.about_me.label(class="form-label") }}
+                    {{ form.about_me(class="form-control") }}
+                    {% for error in form.about_me.errors %}
+                        <small class="text-danger">{{ error }}</small>
+                    {% endfor %}
+                </div>
+
+                <!-- Submit Button -->
+                <div class="col-12">
+                    {{ form.submit(class="btn btn-primary", value='Update Profile') }}
+                </div>
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

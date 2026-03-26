@@ -1,9 +1,9 @@
-from flask import render_template
-from app.forms import loginform
+from flask import render_template, flash
+from app.forms import LoginForm
 
 def register_routes(app):
     @app.route('/')
-    def index():
+    def newsfeed():
         user = {
             "username": "Emilyreid",
                 "firstname": "Emily",
@@ -56,7 +56,9 @@ def register_routes(app):
     
     @app.route('/login', methods=['GET', 'POST'])
     def login():
-        form = loginform()
+        form = LoginForm()
         if form.validate_on_submit():
+            flash ('Login requested for user {} with password {}' .format(form.username.data, form.password.data))
+            
             print('form submitted')
         return render_template("login.html", form = form)
