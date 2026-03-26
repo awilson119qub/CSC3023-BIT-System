@@ -1,14 +1,12 @@
 from flask import render_template, flash
 from app.forms import LoginForm
+from app.models import User
 
 def register_routes(app):
     @app.route('/')
     def newsfeed():
-        user = {
-            "username": "Emilyreid",
-                "firstname": "Emily",
-                "lastname": "Reid"
-                }
+        user = User.query.first()
+
         posts = [
             {
                 'author': {'username': 'Alysha'},
