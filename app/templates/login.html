@@ -8,17 +8,7 @@
             <form method="POST">
                 {{ form.hidden_tag() }}
 
-                <!-- Username -->
-                <div class="form-floating mb-3 w-100">
-                    {{ form.username(class="form-control", id="floatingUsername", placeholder="Username") }}
-                    <label for="floatingUsername">Username</label>
-                    {% for error in form.username.errors %}
-                        <small class="text-danger">{{ error }}</small>
-                    {% endfor %}
-                </div>
-
-                <!-- Email - Registration ONLY -->
-                {% if form_type == 'register' %}
+                <!-- Email -->
                     <div class="form-floating mb-3 w-100">
                         {{ form.email(class="form-control", id="floatingEmail", placeholder="name@example.com") }}
                         <label for="floatingEmail">Email address</label>
@@ -26,7 +16,6 @@
                             <small class="text-danger">{{ error }}</small>
                         {% endfor %}
                     </div>
-                {% endif %}
 
                 <!-- Password -->
                 <div class="form-floating mb-3 w-100">
