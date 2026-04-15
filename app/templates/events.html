@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<div class="container py-4">
+
+    <!-- Top Bar -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="{{ url_for('search') }}" class="text-decoration-none primary-accent">
+            <i class="fa-solid fa-chevron-left fs-4"></i>
+        </a>
+
+        <h2 class="mb-0 fw-bold">Upcoming Events</h2>
+
+        <button class="btn btn-link primary-accent p-0">
+            <i class="fa-solid fa-filter fs-4"></i>
+        </button>
+    </div>
+
+    <!-- Freshers Welcome Night -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Freshers Welcome Night</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Freshers Welcome Night"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="mb-1"><strong>Date:</strong> Friday 5th December 2025</p>
+            <p class="mb-1"><strong>Time:</strong> 7:00PM</p>
+            <p class="mb-3"><strong>Location:</strong> Union Bar</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle" style="width:36px; height:36px; object-fit:cover;" alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle ms-n2" style="width:36px; height:36px; object-fit:cover;" alt="Friend 2">
+                <span class="text-muted ms-2">Isla and 2 other friends are also attending</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4" style="background-color: #990000; min-width: 150px;">Join Event</a>
+                <a href="#" class="text-decoration-none primary-accent">Invite friends or view event details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campus Safety Event -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Campus Safety Event</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Campus Safety Event"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="mb-1"><strong>Date:</strong> Monday 1st December 2025</p>
+            <p class="mb-1"><strong>Time:</strong> 11:00AM - 2:00PM</p>
+            <p class="mb-3"><strong>Location:</strong> One Elmwood Foyer</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle" style="width:36px; height:36px; object-fit:cover;" alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle ms-n2" style="width:36px; height:36px; object-fit:cover;" alt="Friend 2">
+                <span class="text-muted ms-2">Isla and 5 other friends are also attending</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4" style="background-color: #990000; min-width: 150px;">Join Event</a>
+                <a href="#" class="text-decoration-none primary-accent">Invite friends or view event details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pizza & Quiz Night -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Pizza & Quiz Night</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Pizza and Quiz Night"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="mb-1"><strong>Date:</strong> Thursday 22nd January 2026</p>
+            <p class="mb-1"><strong>Time:</strong> 7:00PM</p>
+            <p class="mb-3"><strong>Location:</strong> The Parlour Bar</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle" style="width:36px; height:36px; object-fit:cover;" alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle ms-n2" style="width:36px; height:36px; object-fit:cover;" alt="Friend 2">
+                <span class="text-muted ms-2">Olivia and 3 other friends are also attending</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4" style="background-color: #990000; min-width: 150px;">Join Event</a>
+                <a href="#" class="text-decoration-none primary-accent">Invite friends or view event details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sports Day -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Sports Day</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Sports Day"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="mb-1"><strong>Date:</strong> Friday 1st May 2026</p>
+            <p class="mb-1"><strong>Time:</strong> 10:00AM - 3:00PM</p>
+            <p class="mb-3"><strong>Location:</strong> Queen's PEC</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle" style="width:36px; height:36px; object-fit:cover;" alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle ms-n2" style="width:36px; height:36px; object-fit:cover;" alt="Friend 2">
+                <span class="text-muted ms-2">Emma and 4 other friends are also attending</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4" style="background-color: #990000; min-width: 150px;">Join Event</a>
+                <a href="#" class="text-decoration-none primary-accent">Invite friends or view event details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Big brunch -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">The Big Brunch</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="The Big Brunch"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="mb-1"><strong>Date:</strong> Thursday 25th September 2025</p>
+            <p class="mb-1"><strong>Time:</strong> 10:00AM - 1:00PM</p>
+            <p class="mb-3"><strong>Location:</strong> SU Lounge</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle" style="width:36px; height:36px; object-fit:cover;" alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle ms-n2" style="width:36px; height:36px; object-fit:cover;" alt="Friend 2">
+                <span class="text-muted ms-2">Katie and 6 other friends are also attending</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4" style="background-color: #990000; min-width: 150px;">Join Event</a>
+                <a href="#" class="text-decoration-none primary-accent">Invite friends or view event details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Study Skills Workshop -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Study Skills Workshop</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Study Skills Workshop"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="mb-1"><strong>Date:</strong> 23rd March 2026</p>
+            <p class="mb-1"><strong>Time:</strong> 1:00PM - 3:00PM</p>
+            <p class="mb-3"><strong>Location:</strong> Peter Froggatt Centre</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle" style="width:36px; height:36px; object-fit:cover;" alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}" class="rounded-circle ms-n2" style="width:36px; height:36px; object-fit:cover;" alt="Friend 2">
+                <span class="text-muted ms-2">Mia and 2 other friends are also attending</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4" style="background-color: #990000; min-width: 150px;">Join Event</a>
+                <a href="#" class="text-decoration-none primary-accent">Invite friends or view event details <i class="fa-solid fa-arrow-right ms-1"></i></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

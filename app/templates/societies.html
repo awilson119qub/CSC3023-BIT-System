@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<div class="container py-4">
+
+    <!-- Top Bar -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="{{ url_for('search') }}" class="text-decoration-none primary-accent">
+            <i class="fa-solid fa-chevron-left fs-4"></i>
+        </a>
+
+        <h2 class="mb-0 fw-bold">Societies</h2>
+
+        <div style="width: 24px;"></div>
+    </div>
+
+    <!-- Walkie Talkie Girlies Society -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Walkie Talkie Girlies Society</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Queen's University Belfast"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-3">
+                Hi everyone - we are Walkie Talkie Girlies! You can probably guess from our name that WTG is all about going on weekly walks and socialising with new people. It's a great way to get to know Belfast and make some friends along the way.
+            </p>
+
+            <p class="mb-1"><strong>Email:</strong> walkietalkiegirlies-soc@qub.ac.uk</p>
+            <p class="mb-3"><strong>Instagram:</strong> @walkietalkiegirlies</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Isla and 4 other friends are in this society</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Society
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view society details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wine and Cheese Society -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Wine and Cheese Society</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Queen's University Belfast"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-3">
+                Welcome to QUB Wine and Cheese Society! We want to bring together like-minded wine and cheese lovers to socialise, have fun and eat/drink lots of goodies in a relaxed and friendly environment! We have loads of brie-liant events lined up, both online and off! From cheesy quizzes to wine tasting to bar crawls!
+            </p>
+
+            <p class="mb-1"><strong>Email:</strong> wineandcheese_soc@qub.ac.uk</p>
+            <p class="mb-3"><strong>Instagram:</strong> @qubwineandcheese</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Olivia and 3 other friends are in this society</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Society
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view society details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Art Society -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Arts Society</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Queen's University Belfast"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-3">
+                Hello! We are Queen’s Art Society. We are a fun and welcoming society, perfect for those who are passionate about art, be it drawing, painting, sculpting or doodling in the corners of your notebooks, or for those who just want to chill and make friends. There is no need for you to be a Van Gogh level artist to join us and have fun, if you can draw a stick-man, or even if you can’t, you are more than welcome in our society!
+            </p>
+
+            <p class="mb-1"><strong>Email:</strong> arts-society@qub.ac.uk</p>
+            <p class="mb-3"><strong>Instagram:</strong> @qubartsociety</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Emma and 5 other friends are in this society</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Society
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view society details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- COmputing Society -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Computing Society</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Queen's University Belfast"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-3">
+                QCS, or the Queen’s Computing Society, is an academic society which hosts a range of social and academic events aimed primarily at students within EEECS, particularly those within the Computing discipline, but open to all. Our social events include pub crawls, laser quest, regular games nights and, definitively our largest social event of the year, the annual EEECS Formal. Any excuse to eat pizza, have a drink (or two) and have a good time! Our academic events include hackathons, industry talks, networking opportunities, cross-school/society events and more! Anything that gives Students the chance to learn, develop, network and have a great time (and eat more pizza.)
+            </p>
+
+            <p class="mb-1"><strong>Email:</strong> qcs@qub.ac.uk</p>
+            <p class="mb-3"><strong>Instagram:</strong> @qcsqub</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Katie and 2 other friends are in this society</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Society
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view society details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Queens Rugby Club -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Queen’s Rugby Club</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Queen's University Belfast"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-3">
+                QUBRFC is the oldest rugby club in Ulster and prides itself on its excellent reputation. We are looking for keen rugby players of all levels and abilities to join the club.
+            </p>
+
+            <p class="mb-1"><strong>Email:</strong> rugby@qub.ac.uk</p>
+            <p class="mb-3"><strong>Instagram:</strong> @qubrfc</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Sophie and 3 other friends are in this society</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Society
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view society details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

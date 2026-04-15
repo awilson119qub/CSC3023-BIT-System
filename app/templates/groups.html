@@ -1,0 +1,278 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<div class="container py-4">
+
+    <!-- Top Bar -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <a href="{{ url_for('search') }}" class="text-decoration-none primary-accent">
+            <i class="fa-solid fa-chevron-left fs-4"></i>
+        </a>
+
+        <h2 class="mb-0 fw-bold">Groups</h2>
+
+        <div style="width: 24px;"></div>
+    </div>
+
+    <!-- Final Year BIT Students -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Final Year BIT Students</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Final Year BIT Students"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-2">128 members</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Isla and 4 other friends are in this group</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Group
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view group details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Girls in STEM -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Girls in STEM</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Girls in STEM"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-2">94 members</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Olivia and 3 other friends are in this group</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Group
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view group details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placement Support Group -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Placement Support Group</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Placement Support Group"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-2">76 members</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Emma and 5 other friends are in this group</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Group
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view group details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- BIT Project Group 6 -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">BIT Project Group 6</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="BIT Project Group 6"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-2">6 members</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Katie and 2 other friends are in this group</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Group
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view group details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accounting Presentation Group 3 -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Accounting Presentation Group 3</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Accounting Presentation Group 3"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-2">5 members</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Mia and 1 other friend are in this group</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Group
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view group details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Belfast Book Babes -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="fw-bold mb-0">Belfast Book Babes</h4>
+                <small class="text-muted">...</small>
+            </div>
+
+            <div class="text-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     alt="Belfast Book Babes"
+                     class="img-fluid rounded-3"
+                     style="max-height: 220px; object-fit: cover; width: 100%;">
+            </div>
+
+            <p class="text-muted mb-2">52 members</p>
+
+            <div class="d-flex align-items-center mb-3">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 1">
+                <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                     class="rounded-circle ms-n2"
+                     style="width:36px; height:36px; object-fit:cover;"
+                     alt="Friend 2">
+                <span class="text-muted ms-2">Sophie and 3 other friends are in this group</span>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-between gap-3 flex-wrap">
+                <a href="#" class="btn text-white rounded-pill px-4"
+                   style="background-color: #990000; min-width: 150px;">
+                    Join Group
+                </a>
+
+                <a href="#" class="text-decoration-none primary-accent">
+                    Invite friends or view group details
+                    <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
