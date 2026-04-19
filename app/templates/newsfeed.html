@@ -2,51 +2,53 @@
 
 {% block app_content %}
 
-    <!-- Welcome -->
+<!-- Welcome -->
 <div class="d-flex justify-content-between align-items-center my-4">
-
-    <h2 class="mb-0">Good Afternoon, {{ user.username }}!</h2>
-
-    <!-- Filter Button Placeholder -->
-    <button class="btn btn-link primary-accent p-0">
-    <i class="fa-solid fa-filter"></i>
-    </button>
-
+    <h2 class="mb-0">Good Afternoon, {{ user.username.split(' ')[0] }}!</h2>
 </div>
 
-    <!-- Anything to share? -->
+<!-- Anything to share? -->
 <div class="mb-4">
-  <a href="#" class="text-decoration-none">
     <div class="card border-0 shadow-sm rounded-3">
-      <div class="card-body">
-        <div class="d-flex align-items-center gap-3">
+        <div class="card-body">
+            <form method="POST">
+                {{ form.hidden_tag() }}
 
-          <div class="rounded-circle border border-2"
-               style="width:44px; height:44px; border-color:#990000;">
-            <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
-                 class="rounded-circle"
-                 style="width:100%; height:100%; object-fit:cover;"
-                 alt="You">
-          </div>
+                <div class="d-flex align-items-start gap-3">
+                    <div class="rounded-circle border border-2 flex-shrink-0"
+                         style="width:44px; height:44px; border-color:#990000;">
+                        <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                             class="rounded-circle"
+                             style="width:100%; height:100%; object-fit:cover;"
+                             alt="You">
+                    </div>
 
-          <div class="text-muted">Anything to share?</div>
+                    <div class="flex-grow-1">
+                        {{ form.content(class="form-control border-0 shadow-none p-0", rows="3", placeholder="Anything to share?") }}
 
+                        {% for error in form.content.errors %}
+                            <small class="text-danger d-block mt-1">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="text-end mt-3">
+                    {{ form.submit(class="btn btn-sm text-white px-4", style="background-color: #990000; border: none;") }}
+                </div>
+            </form>
         </div>
-      </div>
     </div>
-  </a>
 </div>
 
-    <!-- Stories Scrolling Row -->
+<!-- Stories Scrolling Row -->
 <div class="mb-4">
     <h5 class="mb-3">Your Connections</h5>
 
     <div class="d-flex gap-3 overflow-auto pb-2">
-
         {% for i in range(1, 15) %}
             <div class="flex-shrink-0 text-center">
 
-                <!-- Avatar Circle Placeholders -->
+                <!-- Profile Picture -->
                 <div class="rounded-circle border border-2"
                      style="width:60px; height:60px; border-color:#990000;">
                     <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
@@ -55,66 +57,100 @@
                          alt="Friend">
                 </div>
 
-                <!-- Name placeholder -->
+                <!-- Name -->
                 <small class="d-block mt-1 text-muted">Friend {{ i }}</small>
-
             </div>
         {% endfor %}
-
     </div>
 </div>
 
-    <!-- NewsFeed -->
-    <div class="mb-5">
-        <h5 class="mb-4">News Feed</h5>
+<!-- NewsFeed -->
+<div class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h5 class="mb-0">News Feed</h5>
 
-        {% if posts and posts|length > 0 %}
-            {% for post in posts %}
-                <div class="card mb-4 border-0 shadow-sm rounded-3">
-                    <div class="card-body">
+        <div class="dropdown">
+            <button class="btn btn-link primary-accent p-0 border-0 shadow-none" 
+                    type="button" 
+                    data-bs-toggle="dropdown" 
+                    aria-expanded="false"
+                    title="Filter posts">
+                <i class="fa-solid fa-filter fs-5"></i>
+            </button>
 
-                        <div class="d-flex justify-content-between align-items-start">
-
-    <div class="d-flex gap-2 align-items-center">
-
-        <!-- Avatar Placeholder -->
-        <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
-             class="rounded-circle"
-             style="width:40px; height:40px; object-fit:cover;"
-             alt="Avatar">
-
-        <!-- User Name + Time Ago -->
-        <div>
-            <strong>{{ post.author.username }}</strong><br>
-            <small class="text-muted">Just now</small>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                <li>
+                    <a class="dropdown-item {% if selected_filter == 'newest' %}active{% endif %}" href="{{ url_for('newsfeed', filter='newest') }}">
+                        All Posts
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item {% if selected_filter == 'today' %}active{% endif %}" href="{{ url_for('newsfeed', filter='today') }}">
+                        Last 24 Hours
+                    </a>
+                </li>
+                <li>
+                     <a class="dropdown-item {% if selected_filter == '3days' %}active{% endif %}" href="{{ url_for('newsfeed', filter='3days') }}">
+                        Last 3 Days
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item {% if selected_filter == 'week' %}active{% endif %}" href="{{ url_for('newsfeed', filter='week') }}">
+                        Last 7 Days
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item {% if selected_filter == 'month' %}active{% endif %}" href="{{ url_for('newsfeed', filter='month') }}">
+                        Last 30 Days
+                    </a>
+                </li>
+            </ul>
         </div>
-
     </div>
 
-    <div>
-        <small class="text-muted">...</small>
-    </div>
+    {% if posts and posts|length > 0 %}
+        {% for post in posts %}
+            <div class="card mb-4 border-0 shadow-sm rounded-3">
+                <div class="card-body">
 
-</div>
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div class="d-flex gap-2 align-items-center">
 
-                        <hr>
+                            <!-- Profile Picture -->
+                            <img src="{{ url_for('static', filename='image/avatarplaceholder.jpg') }}"
+                                 class="rounded-circle"
+                                 style="width:40px; height:40px; object-fit:cover;"
+                                 alt="Avatar">
 
-                        <p class="mb-3">{{ post.content }}</p>
+                            <!-- User Name and Time Posted -->
+                            <div>
+                                <div class="fw-semibold">{{ post.author.username }}</div>
+                                <small class="text-muted">{{ time_ago(post.timestamp) }}</small>
+                            </div>
 
-                        <div class="d-flex gap-3 text-muted">
-                            <small>👍 0</small>
-                            <small>💬 0</small>
-                            <small>↗ 0</small>
                         </div>
 
+                        <div>
+                            <small class="text-muted">...</small>
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p class="text-muted">No posts yet.</p>
-        {% endif %}
-    </div>
 
+                    <hr>
+
+                    <p class="mb-3">{{ post.content }}</p>
+
+                    <div class="d-flex gap-3 text-muted">
+                        <small>👍 0</small>
+                        <small>💬 0</small>
+                        <small>↗ 0</small>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p class="text-muted">No posts yet.</p>
+    {% endif %}
 </div>
 
 {% endblock %}

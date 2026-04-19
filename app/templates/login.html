@@ -8,6 +8,17 @@
             <form method="POST">
                 {{ form.hidden_tag() }}
 
+                <!-- Full Name - Registration ONLY -->
+                {% if form_type == 'register' %}
+                    <div class="form-floating mb-3 w-100">
+                        {{ form.username(class="form-control", id="floatingUsername", placeholder="Full Name") }}
+                        <label for="floatingUsername">Full Name</label>
+                        {% for error in form.username.errors %}
+                            <small class="text-danger">{{ error }}</small>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
                 <!-- Email -->
                     <div class="form-floating mb-3 w-100">
                         {{ form.email(class="form-control", id="floatingEmail", placeholder="name@example.com") }}

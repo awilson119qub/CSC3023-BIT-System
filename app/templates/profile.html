@@ -13,17 +13,77 @@
         <h2 class="mb-0 fw-bold">Profile</h2>
 
         <div class="d-flex gap-3">
-        <!-- Edit -->
-            <a href="#" class="text-decoration-none primary-accent">
+            <!-- Edit -->
+            <a href="{{ url_for('profile', edit='true') }}" class="text-decoration-none primary-accent">
                 <i class="fa-regular fa-pen-to-square fs-4"></i>
             </a>
 
-        <!-- Logout -->
+            <!-- Logout -->
             <a href="{{ url_for('logout') }}" class="text-decoration-none primary-accent">
                 <i class="fa-solid fa-right-from-bracket fs-4"></i>
             </a>
         </div>
     </div>
+
+    {% if edit_mode %}
+
+    <!-- Edit Profile Form -->
+    <div class="card border-0 shadow-sm rounded-4 mb-4">
+        <div class="card-body p-4">
+            <h4 class="fw-bold mb-4">Edit Profile</h4>
+
+            <form method="POST" action="{{ url_for('profile') }}">
+                {{ form.hidden_tag() }}
+
+                <div class="mb-3">
+                    {{ form.username.label(class="form-label fw-semibold") }}
+                    {{ form.username(class="form-control rounded-3") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.bio.label(class="form-label fw-semibold") }}
+                    {{ form.bio(class="form-control rounded-3", rows="4") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.course.label(class="form-label fw-semibold") }}
+                    {{ form.course(class="form-control rounded-3") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.year_of_study.label(class="form-label fw-semibold") }}
+                    {{ form.year_of_study(class="form-control rounded-3") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.accommodation.label(class="form-label fw-semibold") }}
+                    {{ form.accommodation(class="form-control rounded-3") }}
+                </div>
+
+                <div class="mb-3">
+                    {{ form.hometown.label(class="form-label fw-semibold") }}
+                    {{ form.hometown(class="form-control rounded-3") }}
+                </div>
+
+                <div class="mb-4">
+                    {{ form.interests.label(class="form-label fw-semibold") }}
+                    {{ form.interests(class="form-control rounded-3") }}
+                    <div class="form-text">Separate interests with commas.</div>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn text-white rounded-3 px-4" style="background-color: #990000;">
+                        Save Changes
+                    </button>
+                    <a href="{{ url_for('profile') }}" class="btn btn-outline-secondary rounded-3 px-4">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {% else %}
 
     <!-- Profile Header -->
     <div class="card border-0 shadow-sm rounded-4 mb-4" style="background-color: #f8f8f8;">
@@ -37,8 +97,16 @@
             </div>
 
             <h1 class="fw-bold mb-2" style="color: #4b0f12;">{{ user.username }}</h1>
-            <p class="mb-1 text-muted fs-5">Business Information Technology BSc - Year 1</p>
-            <p class="mb-0 text-muted fs-5">Joined September 2025</p>
+            <p class="mb-1 text-muted fs-5">
+                {{ user.course if user.course else "Course not added" }}
+                {% if user.year_of_study %} - {{ user.year_of_study }}{% endif %}
+            </p>
+            <p class="mb-0 text-muted fs-5">
+
+                <!-- CHATGPT USED PROMPT = Can you give me a python function to display the date a user joined using datetime field, rather than a value that the user adds themselves -->
+                <p class="mb-0 text-muted fs-5">
+                    Joined {{ user.created_at.strftime('%B %Y') if user.created_at else "Recently" }}
+            </p>
 
         </div>
     </div>
@@ -50,8 +118,7 @@
         <div class="card border-0 shadow-sm rounded-4">
             <div class="card-body p-4">
                 <p class="mb-0 text-muted fs-6">
-                    Hey! I’m currently studying Business Information Technology at Queen’s University Belfast.
-                    I’ve just moved to Belfast and I’m excited to meet new people.
+                    {{ user.bio if user.bio else "Bio not added" }}
                 </p>
             </div>
         </div>
@@ -64,14 +131,14 @@
         <div class="card border-0 shadow-sm rounded-4 mb-3">
             <div class="card-body p-4">
                 <small class="text-uppercase text-muted d-block mb-2">Accommodation</small>
-                <p class="mb-0 fs-5">VITA Student Accommodation</p>
+                <p class="mb-0 fs-5">{{ user.accommodation if user.accommodation else "Accommodation not added" }}</p>
             </div>
         </div>
 
         <div class="card border-0 shadow-sm rounded-4 mb-3">
             <div class="card-body p-4">
                 <small class="text-uppercase text-muted d-block mb-2">Hometown</small>
-                <p class="mb-0 fs-5">Killybegs, Donegal</p>
+                <p class="mb-0 fs-5">{{ user.hometown if user.hometown else "Hometown not added" }}</p>
             </div>
         </div>
 
@@ -88,33 +155,28 @@
         <h4 class="fw-bold mb-3">Interests</h4>
 
         <div class="d-flex flex-wrap gap-2">
-            <span class="px-3 py-2 rounded-pill border shadow-sm"
-                  style="border-color: #990000 !important; color: #7a1a1f; background-color: #ffffff;">
-                Gaming
-            </span>
-
-            <span class="px-3 py-2 rounded-pill border shadow-sm"
-                  style="border-color: #990000 !important; color: #7a1a1f; background-color: #ffffff;">
-                Art
-            </span>
-
-            <span class="px-3 py-2 rounded-pill border shadow-sm"
-                  style="border-color: #990000 !important; color: #7a1a1f; background-color: #ffffff;">
-                Animals
-            </span>
-
-            <span class="px-3 py-2 rounded-pill border shadow-sm"
-                  style="border-color: #990000 !important; color: #7a1a1f; background-color: #ffffff;">
-                Walking
-            </span>
+            {% if user.interests %}
+                {% for interest in user.interests.split(',') %}
+                    <span class="px-3 py-2 rounded-pill border shadow-sm"
+                          style="border-color: #990000 !important; color: #7a1a1f; background-color: #ffffff;">
+                        {{ interest.strip() }}
+                    </span>
+                {% endfor %}
+            {% else %}
+                <p class="text-muted mb-0">No interests added yet.</p>
+            {% endif %}
         </div>
     </div>
 
     <!-- Delete Account -->
-        <a href="#" class="text-danger fw-bold text-decoration-none">
-        Delete Account
-    </a>
+    <div class="text-center mt-5">
+        <a href="#" class="btn btn-outline-danger rounded-3 px-4 fw-semibold">
+            Delete Account
+        </a>
+    </div>
 </div>
+
+    {% endif %}
 
 </div>
 

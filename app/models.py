@@ -4,9 +4,17 @@ from datetime import datetime, timezone
 from flask_login import UserMixin
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(64), index=True, unique=True)
+    username = db.Column(db.String(64), index=True)
     email = db.Column(db.String(120), index=True, unique=True)
     password_hash = db.Column(db.String(128))
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
+    bio = db.Column(db.Text)
+    course = db.Column(db.String(120))
+    year_of_study = db.Column(db.String(50))
+    joined_date = db.Column(db.String(50))
+    accommodation = db.Column(db.String(120))
+    hometown = db.Column(db.String(120))
+    interests = db.Column(db.String(255))
 
     # User Posts #
     posts = db.relationship('Post', backref='author')
@@ -21,7 +29,7 @@ class User(UserMixin, db.Model):
         return '(User {})'.format(self.username)
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    content = db.Column(db.String(255))
+    content = db.Column(db.Text)
     timestamp = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     is_recommended = db.Column(db.Boolean, default=False)
